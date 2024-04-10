@@ -14,8 +14,12 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import { ModeToggle } from "../themeMode/ModeToggle";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
+
+  const router = useRouter()
+
   return (
     <div className="flex justify-between">
   <Menubar>
@@ -101,7 +105,7 @@ const Header = () => {
           <MenubarSeparator />
           <MenubarItem inset>Edit...</MenubarItem>
           <MenubarSeparator />
-          <MenubarItem inset>Add Profile...</MenubarItem>
+          <MenubarItem inset onClick={()=>router.push('/')}>LogOut</MenubarItem>
         </MenubarContent>
       </MenubarMenu>
 
